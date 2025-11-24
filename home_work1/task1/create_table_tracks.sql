@@ -11,13 +11,8 @@ CREATE TABLE IF NOT EXISTS tb_tracks();
 ALTER TABLE IF EXISTS tb_tracks
     ADD COLUMN IF NOT EXISTS id                         BIGSERIAL,
     ADD COLUMN IF NOT EXISTS name                       VARCHAR,
-    DROP COLUMN IF EXISTS artist,
-    DROP COLUMN IF EXISTS year,
-    DROP COLUMN IF EXISTS genre,
     ADD COLUMN IF NOT EXISTS album_id                   SMALLINT,
-    DROP COLUMN IF EXISTS duration,
     ADD COLUMN IF NOT EXISTS duration                   INTERVAL,
-    DROP COLUMN IF EXISTS listened,
     ADD COLUMN IF NOT EXISTS listened                   INT
 ;
 
