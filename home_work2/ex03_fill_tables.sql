@@ -56,21 +56,67 @@ INSERT INTO tb_albums (name, artist_id, year, genre_id)  VALUES (
 
 
 --Таблица с музыкальными треками
-INSERT INTO tb_tracks (name, album_id, listened, duration)  VALUES (
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
         'Love Gun',
         (SELECT album_id FROM tb_albums WHERE name='Love Gun'),
-        111222333,
-        '00:03:18'
+        11122,
+        '00:03:18',
+        (SELECT genre_id FROM tb_genres WHERE name='рок')
 );
-INSERT INTO tb_tracks (name, album_id, listened, duration)  VALUES (
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
         'I Stole Your Love',
         (SELECT album_id FROM tb_albums WHERE name='Love Gun'),
-        23234234,
-        '00:03:04'
+        2322,
+        '00:03:04',
+        (SELECT genre_id FROM tb_genres WHERE name='рок')
 );
-INSERT INTO tb_tracks (name, album_id, listened, duration)  VALUES (
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
         'American Life song',
         (SELECT album_id FROM tb_albums WHERE name='American Life'),
-        22333333,
-        '00:03:01'
+        2233,
+        '00:03:01',
+        (SELECT genre_id FROM tb_genres WHERE name='поп')
+);
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
+        'Instant Crush',
+        (SELECT album_id FROM tb_albums WHERE name='Get Lucky'),
+        456569,
+        '00:05:31',
+        (SELECT genre_id FROM tb_genres WHERE name='электронная')
+);
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
+        'Touch',
+        (SELECT album_id FROM tb_albums WHERE name='Get Lucky'),
+        1269,
+        '00:08:18',
+        (SELECT genre_id FROM tb_genres WHERE name='электронная')
+);
+
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
+        'It’s OK',
+        (SELECT album_id FROM tb_albums WHERE name='Infinite'),
+        30000000,
+        '00:04:01',
+        (SELECT genre_id FROM tb_genres WHERE name='хип-хоп')
+);
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
+        'Backstabber',
+        (SELECT album_id FROM tb_albums WHERE name='Infinite'),
+        50000011,
+        '00:03:24',
+        (SELECT genre_id FROM tb_genres WHERE name='хип-хоп')
+);
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
+        'Infinite',
+        (SELECT album_id FROM tb_albums WHERE name='Infinite'),
+        15000001,
+        '00:04:01',
+        (SELECT genre_id FROM tb_genres WHERE name='хип-хоп')
+);
+INSERT INTO tb_tracks (name, album_id, listened, duration, genre_id)  VALUES (
+        'Infinite2',
+        (SELECT album_id FROM tb_albums WHERE name='Infinite'),
+        49000001,
+        '00:04:01',
+        (SELECT genre_id FROM tb_genres WHERE name='хип-хоп')
 );
