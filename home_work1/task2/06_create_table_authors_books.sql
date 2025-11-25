@@ -36,6 +36,6 @@ BEGIN
         )
     THEN
         ALTER TABLE tb_authors_books ADD foreign key (author_id) REFERENCES tb_authors(author_id);
-ALTER TABLE tb_authors_books ADD foreign key (book_id) REFERENCES tb_books(book_id);
+        ALTER TABLE tb_authors_books ADD foreign key (book_id) REFERENCES tb_books(book_id);
     END IF;
 END ';
