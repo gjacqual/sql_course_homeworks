@@ -36,19 +36,6 @@ BEGIN
         )
     THEN
         ALTER TABLE tb_authors_books ADD foreign key (author_id) REFERENCES tb_authors(author_id);
-    END IF;
-END ';
-
-DO '
-BEGIN
-    IF NOT EXISTS (
-            SELECT 1
-            FROM information_schema.table_constraints
-            WHERE lower(table_name) = ''tb_authors_books''
-              and lower(table_schema) = ''public''
-              and lower(constraint_type) = ''foreign key''
-        )
-    THEN
-        ALTER TABLE tb_authors_books ADD foreign key (book_id) REFERENCES tb_books(book_id);
+ALTER TABLE tb_authors_books ADD foreign key (book_id) REFERENCES tb_books(book_id);
     END IF;
 END ';

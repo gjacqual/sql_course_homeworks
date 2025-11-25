@@ -23,7 +23,7 @@ ALTER TABLE IF EXISTS tb_books
 ;
 
 COMMENT ON TABLE  tb_books                             IS 'Таблица с книгами в сервисе';
-COMMENT ON COLUMN tb_books.book_id                          IS 'Идентификатор книги';
+COMMENT ON COLUMN tb_books.book_id                     IS 'Идентификатор книги';
 COMMENT ON COLUMN tb_books.name                        IS 'Название книги';
 COMMENT ON COLUMN tb_books.year                        IS 'Год издания';
 COMMENT ON COLUMN tb_books.genre_id                    IS 'Идентификатор жанра книги';
@@ -45,6 +45,7 @@ BEGIN
     END IF;
 END ';
 
+
 DO '
 BEGIN
     IF NOT EXISTS (
@@ -56,36 +57,9 @@ BEGIN
         )
     THEN
         ALTER TABLE tb_books ADD foreign key (genre_id) REFERENCES tb_genres(genre_id);
-    END IF;
-END ';
-
-
-
-DO '
-BEGIN
-    IF NOT EXISTS (
-            SELECT 1
-            FROM information_schema.table_constraints
-            WHERE lower(table_name) = ''tb_books''
-              and lower(table_schema) = ''public''
-              and lower(constraint_type) = ''foreign key''
-        )
-    THEN
         ALTER TABLE tb_books ADD foreign key (publisher_id) REFERENCES tb_publishers(publisher_id);
-    END IF;
-END ';
-
-DO '
-BEGIN
-    IF NOT EXISTS (
-            SELECT 1
-            FROM information_schema.table_constraints
-            WHERE lower(table_name) = ''tb_books''
-              and lower(table_schema) = ''public''
-              and lower(constraint_type) = ''foreign key''
-        )
-    THEN
         ALTER TABLE tb_books ADD foreign key (store_id) REFERENCES tb_stores(store_id);
     END IF;
 END ';
+
 

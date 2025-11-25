@@ -16,7 +16,7 @@ BEGIN
     IF NOT EXISTS (
             SELECT 1
             FROM information_schema.table_constraints
-            WHERE lower(table_name) = ''tb_stores''
+            WHERE lower(table_name) = ''tb_publishers''
               and lower(table_schema) = ''public''
               and lower(constraint_type) = ''primary key''
         )
