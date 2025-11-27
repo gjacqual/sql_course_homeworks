@@ -18,7 +18,7 @@ BEGIN
             SELECT 1
             FROM information_schema.table_constraints
             WHERE lower(table_name) = ''student16.tb_genres''
-              and lower(table_schema) = ''public''
+              and lower(table_schema) = ''student16''
               and lower(constraint_type) = ''primary key''
         )
     THEN

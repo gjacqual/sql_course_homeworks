@@ -17,6 +17,8 @@ ALTER TABLE IF EXISTS student16.tb_books
     ADD COLUMN IF NOT EXISTS genre_id                   SMALLINT,
     ADD COLUMN IF NOT EXISTS publisher_id               SMALLINT,
     ADD COLUMN IF NOT EXISTS store_id                   SMALLINT,
+    ADD COLUMN IF NOT EXISTS pages                   SMALLINT,
+    ADD COLUMN IF NOT EXISTS downloads                  INT,
     ADD COLUMN IF NOT EXISTS price                      SMALLINT
 
 
@@ -29,6 +31,8 @@ COMMENT ON COLUMN student16.tb_books.year                        IS 'Год из
 COMMENT ON COLUMN student16.tb_books.genre_id                    IS 'Идентификатор жанра книги';
 COMMENT ON COLUMN student16.tb_books.publisher_id                IS 'Идентификатор издателя';
 COMMENT ON COLUMN student16.tb_books.store_id                    IS 'Идентификатор магазина';
+COMMENT ON COLUMN student16.tb_books.pages                       IS 'Страниц';
+COMMENT ON COLUMN student16.tb_books.downloads                   IS 'Скачиваний';
 COMMENT ON COLUMN student16.tb_books.price                       IS 'Цена книги';
 
 DO '
